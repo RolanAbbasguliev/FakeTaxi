@@ -58,7 +58,7 @@ function isEmptyOrSpaces(str){
 
 
 
-async function sendRequest(startPoint, endPoint) {
+async function sendRequest() {
     const divWithClassExists = document.querySelectorAll(
         'div.infoContainer'
        ).length > 0;
@@ -74,8 +74,16 @@ async function sendRequest(startPoint, endPoint) {
     document.getElementById("info").appendChild(divInfoBlock)
     
 
-    startPoint = document.getElementById("startPoint").value
-    endPoint  = document.getElementById("endPoint").value
+    let startPoint = document.getElementById("startPoint").value
+    let endPoint  = document.getElementById("endPoint").value
+    let timePoint = document.getElementById("timePoint").value
+
+    if (isEmptyOrSpaces(timePoint)) {
+        timePoint = "Как можно скорее"
+    }
+
+    console.log(timePoint);
+
 
     if (isEmptyOrSpaces(startPoint) || isEmptyOrSpaces(endPoint)) {
         return -1;
@@ -160,8 +168,8 @@ async function sendRequest(startPoint, endPoint) {
                 button.innerHTML = "Выбрать"
 
                 button.onclick = () => {
-                    let text = JSON.stringify({"КЛАСС": `${taxiName}`, "ЦЕНА": `${taxiPrice}`, "РЕЙТИНГ ВОДИТЕЛЯ": `${taxiRating}`, "ВРЕМЯ В ПУТИ": `${taxiTime}`});
-                    alert(`\n🚕Вы вызвали такси!🥳\n💎КЛАСС: ${taxiName}\n💰ЦЕНА: ${taxiPrice}\n👳РЕЙТИНГ ВОДИЛЯ: ${taxiRating}\n🕐ВРЕМЯ В ПУТИ: ${taxiTime}`)
+                    let text = JSON.stringify({"КЛАСС": `${taxiName}`, "ЦЕНА": `${taxiPrice}`, "РЕЙТИНГ ВОДИТЕЛЯ": `${taxiRating}`, "ВРЕМЯ В ПУТИ": `${taxiTime}`, "ВРЕМЯ ПОДАЧИ": `${timePoint}`});
+                    alert(`\n🚕Вы вызвали такси!🥳\n💎КЛАСС: ${taxiName}\n💰ЦЕНА: ${taxiPrice}\n👳РЕЙТИНГ ВОДИЛЯ: ${taxiRating}\n🕐ВРЕМЯ В ПУТИ: ${taxiTime}\n🕥ВРЕМЯ ПОДАЧИ: ${timePoint}`)
                     if (confirm("Хотите сохранить файл с информацией о поездке")) {
                         downloadAsFile(text);
                     } 
