@@ -219,4 +219,4 @@ async function test_geocoder_yandexapi() {
 }
 
  
-test_geocoder_yandexapi();
+// test_geocoder_yandexapi();
