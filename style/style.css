@@ -1,0 +1,123 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-color: rgb(15, 14, 4);
+    background-image: url("../img/bck.png");
+    background-size: cover;
+
+}
+
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin: 0 auto
+}
+
+::placeholder {
+    color: rgba(0, 0, 0, 0.589);
+}
+
+.logo {
+    margin-top: 50px;
+    display: flex;
+    font-size: 25px;
+    justify-content: center;
+    color: rgb(236, 218, 16);
+}
+
+.inputForm {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    margin: 0 auto;
+    margin-top: 100px
+}
+
+input[type=text] {
+    font-size: 20px;
+    width: 100%;
+    padding: 20px 20px;
+    margin: 20px 0;
+    box-sizing: border-box;
+    border: 2px solid rgb(0, 0, 0);
+    color: black;
+    background-color: rgba(255, 255, 255, 0.363);
+}
+
+input:focus {
+    outline: none;
+}
+
+.logo-img {
+    margin-right: 20px;
+}
+
+.submit {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    margin: 0 auto;
+    width: 100%;
+    margin-top: 50px;
+    font-size: 20px;
+    padding: 20px 30px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.747);
+    border-radius: 1000px;
+    border: 1px solid silver;
+}
+
+.sumbit:hover {
+    background-color: silver;
+}
+
+.submit:active {
+    color: black;
+    background-color: rgb(236, 218, 16);
+}
+
+.infoContainer {
+    margin-top: 100px;
+    display: flex;
+    justify-content: space-around;
+    font-size: 25px;
+    text-align: center;
+    flex-wrap: wrap;
+
+}
+
+
+.taxiSubmit {
+    margin-top: 145px;
+    width: 100%;
+    font-size: 20px;
+    font-weight: 700;
+    width: 100%;
+
+    padding: 20px 15px;
+
+
+}
+
+.taxiSubmit:active {
+
+    background-color: rgb(17, 173, 30);
+}
+
+.taxiName {
+    margin-top: 50px;
+}
+
+
+.minPrice {
+    color: green;
+}
+
+.maxPrice {
+    color: red;
+}

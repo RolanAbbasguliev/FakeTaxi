@@ -1,20 +1,43 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=<YeqApkGSrqOOhLWSBfFUmorClUgaGqrY>" type="text/javascript"></script>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fake taxi</title>
-</head>
-<body>
-    <header> Fake Taxi </header>
-    <main>
-        <div class="formInput"></div>
+<html>
 
-    </main>
-    <footer></footer>
-    <script src="script.js"></script>
-    <script src="map.js"></script>
+<head>
+    <title>Fake Taxi</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <link rel="stylesheet" href="./style/style.css" />
+</head>
+
+<body>
+    <script src="./src/script.js"></script>
 </body>
+<header>
+    <div class="wrapper">
+        <div class="logo">
+            <img src="img/logo.png.png" alt="LOGO" class="logo-img" width="50px" height="50px">
+            <h1>Fake Taxi</h1>
+
+        </div>
+    </div>
+
+</header>
+
+<main>
+    <div class="wrapper">
+        <div class="inputForm">
+            <div class="startPoint-section">
+                <input type="text" placeholder="Введите начальный адрес" class="startPoint form" id="startPoint"
+                    value="Gonbad E Kavoos Department of Education"></input>
+            </div>
+
+            <input type="text" placeholder="Введите конечный адрес" class="endPoint form" id="endPoint"
+                value="Голестан Иран"></input>
+            <button class="submit" onclick="sendRequest()">Поиск</button>
+        </div>
+    </div>
+
+
+    <div class="info" id="info">
+    </div>
+
+</main>
+
 </html>
